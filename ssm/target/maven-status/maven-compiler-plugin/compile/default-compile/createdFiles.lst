@@ -1,0 +1,5 @@
+com\lanqiao\model\User.class
+com\lanqiao\dao\UserDao.class
+com\lanqiao\controller\UserController.class
+com\lanqiao\service\impl\UserServiceImpl.class
+com\lanqiao\service\UserService.class

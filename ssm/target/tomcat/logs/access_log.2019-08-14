@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [14/Aug/2019:17:37:08 +0800] "GET /user/login.action HTTP/1.1" 200 408 http-bio-80-exec-1 803
+0:0:0:0:0:0:0:1 - - [14/Aug/2019:17:37:14 +0800] "POST /user/doLogin.action HTTP/1.1" 200 133 http-bio-80-exec-3 619
+0:0:0:0:0:0:0:1 - - [14/Aug/2019:17:37:28 +0800] "POST /user/doLogin.action HTTP/1.1" 302 - http-bio-80-exec-4 20
+0:0:0:0:0:0:0:1 - - [14/Aug/2019:17:37:29 +0800] "GET /user/getAll.action HTTP/1.1" 200 912 http-bio-80-exec-6 370
