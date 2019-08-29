@@ -16,7 +16,7 @@ public class CustomDateConverter implements Converter<String, Date>{
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+
 		return null;
 	}
 
