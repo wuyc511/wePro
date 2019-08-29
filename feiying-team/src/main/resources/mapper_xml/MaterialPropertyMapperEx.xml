@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.feiying.erp.datasource.mappers.MaterialPropertyMapperEx">
+    <select id="selectByConditionMaterialProperty" parameterType="com.feiying.erp.datasource.entities.MaterialPropertyExample" resultMap="com.feiying.erp.datasource.mappers.MaterialPropertyMapper.BaseResultMap">
+        select *
+        FROM feiying_materialproperty
+        where 1=1
+        <if test="name != null">
+            and nativeName like '%${name}%'
+        </if>
+        and ifnull(delete_Flag,'0') !='1'
+        <if test="offset != null and rows != null">
+            limit #{offset},#{rows}
+        </if>
+    </select>
+    <select id="countsByMaterialProperty" resultType="java.lang.Long">
+        SELECT
+        COUNT(id)
+        FROM feiying_materialproperty
+        WHERE 1=1
+        <if test="name != null">
+            and nativeName like '%${name}%'
+        </if>
+        and ifnull(delete_Flag,'0') !='1'
+    </select>
+    <update id="batchDeleteMaterialPropertyByIds">
+        update feiying_materialproperty
+        set delete_Flag='1'
+        where 1=1
+        and id in (
+        <foreach collection="ids" item="id" separator=",">
+            #{id}
+        </foreach>
+        )
+    </update>
+</mapper>
